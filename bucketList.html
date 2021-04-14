@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SI 579 Final Project - Thais</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <img src="images/NPSLogo.png" alt="logo" class = "logo">
+        <nav>
+            <ul class="nav_links">
+                <li class="nav_item"><a href="./index.html" >National Parks Overview</a></li>
+                <li class="nav_item"><a href="#bucketList" id='current'>Bucket List Creator</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <h1>National Parks Bucket List Creator</h1>
+            <p id="directions">Fill out the form below to create your dream bucket list of National Parks in the US!</p>
+            <form id="NPSForm">
+                    <legend>1. Which activity sounds most fun to you?</legend><br>
+                        <input type="radio" id="hiking" name="question1" value="hiking" required>
+                        <label for="question1">Hiking</label><br>
+                        <input type="radio" id="astronomy" name="question1" value="astronomy">
+                        <label for="question1">Astronomy</label><br>
+                        <input type="radio" id="climbing" name="question1" value="climbing">
+                        <label for="question1">Climbing</label><br>
+                        <input type="radio" id="arts" name="question1" value="arts">
+                        <label for="question1">Arts and Culture</label><br>
+                    <legend>2. Would you prefer fishing, hunting, or wildlife watching?</legend><br>
+                        <input type="radio" id="fishing" name="question2" value="fishing" required>
+                        <label for="question1">Fishing</label><br>
+                        <input type="radio" id="hunting" name="question2" value="hunting">
+                        <label for="question1">Hunting</label><br>
+                        <input type="radio" id="watching" name="question2" value="watching" required>
+                        <label for="question1">Wildlife Watching</label><br>
+                    <legend>3. Which of these topics is most interesting to you?</legend><br> 
+                        <input type="radio" id="americanRevolution" name="question3" value="americanRevolution" required>
+                        <label for="question3">American Revolution</label><br>
+                        <input type="radio" id="music" name="question3" value="music">
+                        <label for="question3">Music</label><br>
+                        <input type="radio" id="womenshistory" name="question3" value="womenshistory">
+                        <label for="question3">Women's History</label><br>
+                        <input type="radio" id="animals" name="question3" value="animals">
+                        <label for="question3">Animals</label><br>
+                    <legend>4. Which water feature would you be most interested in exploring?</legend><br> 
+                        <input type="radio" id="lake" name="question4" value="lake" required>
+                        <label for="question4">Lake</label><br>
+                        <input type="radio" id="ocean" name="question4" value="ocean">
+                        <label for="question4">Ocean</label><br>
+                        <input type="radio" id="waterfall" name="question4" value="waterfall">
+                        <label for="question4">Waterfall</label><br>
+                        <input type="radio" id="river" name="question4" value="river">
+                        <label for="question4">River</label><br>
+                    <legend>5. Which type of environment would you most like to explore?</legend><br> 
+                        <input type="radio" id="forests" name="question5" value="forests" required>
+                        <label for="question5">Forests</label><br>
+                        <input type="radio" id="grasslands" name="question5" value="grasslands">
+                        <label for="question5">Grasslands</label><br>
+                        <input type="radio" id="mountains" name="question5" value="mountains">
+                        <label for="question5">Mountains</label><br>
+                        <input type="radio" id="canyons" name="question5" value="canyons">
+                        <label for="question5">Canyons</label><br>
+                    <legend>6. Select the #1 state you're interested in exploring.</legend><br> 
+                        <select name="question6" id="question6">
+                            <option value="AK">Alaska</option>
+                            <option value="americanSamoa">American Samoa</option>
+                            <option value="arizona">Arizona</option>
+                            <option value="arkansas">Arkansas</option>
+                            <option value="california">California</option>
+                            <option value="colorado">Colorado</option>
+                            <option value="florida">Florida</option>
+                            <option value="hawaii">Hawaii</option>
+                            <option value="idaho">Idaho</option>
+                            <option value="kentucky">Kentucky</option>
+                            <option value="indiana">Indiana</option>
+                            <option value="maine">Maine</option>
+                            <option value="michigan">Michigan</option>
+                            <option value="minnesota">Minnesota</option>
+                            <option value="missouri">Missouri</option>
+                            <option value="montana">Montana</option>
+                            <option value="nevada">Nevada</option>
+                            <option value="newMexico">New Mexico</option>
+                            <option value="northDakota">North Dakota</option>
+                            <option value="northCarolina">North Carolina</option>
+                            <option value="ohio">Ohio</option>
+                            <option value="oregon">Oregon</option>
+                            <option value="southCarolina">South Carolina</option>
+                            <option value="southDakota">South Dakota</option>
+                            <option value="tennesse">Tennesse</option>
+                            <option value="texas">Texas</option>
+                            <option value="utah">Utah</option>
+                            <option value="virginIslands">Virgin Islands</option>
+                            <option value="virginia">Virginia</option>
+                            <option value="washington">Washington</option>
+                            <option value="westVirginia">West Virginia</option>
+                            <option value="wyoming">Wyoming</option>
+                        </select>
+
+                        <div class="submit"><input type="submit" value="Submit" ></div>
+            </form>
+            <script src="js/bucketListPage.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script>   
+                $('input[type=checkbox]').on('change', function (e) {
+                    if ($('input[type=checkbox]:checked').length > 3) {
+                        $(this).prop('checked', false);
+                        alert("Only allowed to pick three states!");
+                    }
+                });
+            </script>
+        </main>
+    </body>
+</html>
